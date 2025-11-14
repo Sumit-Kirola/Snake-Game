@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+:root {
+  /*background colors*/
+  --bg-primary-color: rgb(15, 15, 15);
+  --bg-fill-color: rgb(200, 200, 200);
+  --bg-food-color: tomato;
+
+  /*text colors*/
+  --text-primary-color: rgb(237, 235, 235);
+
+  /*Spacing variables*/
+  --spaces-xs: 4px;
+  --spaces-sm: 8px;
+  --spaces-md: 16px;
+  --spaces-lg: 24px;
+  --spaces-xl: 32px;
+  --spaces-2xl: 40px;
+  --spaces-3xl: 48px;
+
+  /*Border primary color*/
+  --border-primary-color: #333333;
+
+  /*Border radius*/
+  --border-radius-xs: 4px;
+  --border-radius-sm: 8px;
+  --border-radius-md: 12px;
+  --border-radius-lg: 16px;
+  --border-radius-xl: 20px;
+  --border-radius-2xl: 24px;
+}
+
+html {
+  background-color: var(--bg-primary-color);
+  color: var(--text-primary-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+main,
+section {
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  padding: var(--spaces-2xl);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--spaces-lg);
+}
+
+section .infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info {
+  padding: var(--spaces-sm) var(--spaces-md);
+  border: 1px solid var(--border-primary-color);
+  border-radius: var(--border-radius-xs);
+}
+
+.board {
+  border: 1px solid var(--border-primary-color);
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
+
+}
+
+.block {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--border-primary-color);
+  border-radius: 50%;
+}
+
+.fill {
+  background-color: var(--bg-fill-color);
+}
+
+.food {
+  background-color: var(--bg-food-color);
+}
+
+.btn {
+  padding: var(--spaces-sm) var(--spaces-md);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: #35353587;
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .start-game,
+.modal .game-over {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spaces-lg);
+}
+
+.modal .game-over {
+  display: none;
+}
